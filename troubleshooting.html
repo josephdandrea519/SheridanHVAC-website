@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HVAC Troubleshooting Guide | Sheridan Heating &amp; Cooling | Ocean County NJ</title>
+<meta name="description" content="AC or heat not working? Use Sheridan Heating &amp; Cooling's free troubleshooting guide to identify common HVAC problems in Ocean County, NJ. Call 609.296.3151 for fast service.">
+<meta name="keywords" content="HVAC troubleshooting NJ, AC not working Ocean County, furnace not turning on NJ, heater blowing cold air, AC frozen coil, HVAC repair Little Egg Harbor">
+<meta property="og:title" content="HVAC Troubleshooting Guide | Sheridan Heating &amp; Cooling">
+<meta property="og:description" content="AC or heat not working? Our quick troubleshooting guide helps Ocean County homeowners identify common HVAC problems. Call 609.296.3151.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.sheridanheatingandcooling.com/troubleshooting.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── TROUBLESHOOTING PAGE STYLES ── */
+
+/* Intro banner */
+.ts-intro {
+  background: var(--off-white);
+  padding: 56px 8% 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-light);
+}
+.ts-intro-inner { max-width: 720px; margin: 0 auto; }
+.ts-intro .section-tag { margin-bottom: 0.8rem; }
+.ts-intro-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.ts-intro-title .red { color: var(--red); }
+.ts-intro-desc {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+}
+.ts-intro-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Category tabs */
+.ts-tabs-wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-light);
+  position: sticky;
+  top: 72px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.ts-tabs {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 8%;
+  gap: 0;
+}
+.ts-tab-btn {
+  flex: 1;
+  padding: 1.1rem 1.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.ts-tab-btn:hover { color: var(--blue); }
+.ts-tab-btn.active { color: var(--blue); border-bottom-color: var(--red); }
+.ts-tab-icon { font-size: 1.2rem; }
+
+/* Panels */
+.ts-panels { padding: 56px 8%; background: var(--off-white); }
+.ts-panel { display: none; max-width: 900px; margin: 0 auto; }
+.ts-panel.active { display: block; }
+
+.ts-panel-intro {
+  margin-bottom: 2rem;
+}
+.ts-panel-intro h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.4rem;
+}
+.ts-panel-intro p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Issue accordion */
+.ts-issue {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.ts-issue:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.ts-issue.open { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+
+.ts-issue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  gap: 1rem;
+  border-left: 4px solid transparent;
+  transition: border-color 0.2s, background 0.15s;
+  user-select: none;
+}
+.ts-issue-header:hover { background: var(--off-white); }
+.ts-issue.open .ts-issue-header { border-left-color: var(--red); background: var(--off-white); }
+
+.ts-issue-symptom {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--blue);
+  flex: 1;
+}
+.ts-issue-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray);
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  display: none;
+}
+.ts-issue-chevron {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  color: var(--blue);
+  transition: transform 0.3s, background 0.2s;
+}
+.ts-issue.open .ts-issue-chevron {
+  transform: rotate(180deg);
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+.ts-issue-body {
+  display: none;
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--gray-light);
+}
+.ts-issue.open .ts-issue-body { display: block; }
+
+.ts-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 1.2rem 0;
+}
+.ts-detail {
+  background: var(--off-white);
+  border-radius: 3px;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--blue);
+}
+.ts-detail.cause { border-left-color: var(--red); }
+.ts-detail-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gray);
+  margin-bottom: 0.35rem;
+}
+.ts-detail-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.ts-explanation {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: #f0f4ff;
+  border-radius: 3px;
+  border-left: 3px solid var(--blue-light);
+}
+.ts-explanation strong { color: var(--text); }
+
+.ts-action {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 1.4rem;
+  padding: 1rem 1.2rem;
+  background: #fff8f0;
+  border-radius: 3px;
+  border-left: 3px solid #e67e22;
+}
+.ts-action-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #e67e22;
+  margin-bottom: 0.35rem;
+}
+
+.ts-issue-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.2rem;
+  background: var(--blue);
+  border-radius: 3px;
+  justify-content: space-between;
+}
+.ts-issue-cta-text {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.ts-issue-cta-text strong { color: var(--white); display: block; margin-bottom: 2px; }
+.ts-issue-cta-btns { display: flex; gap: 0.7rem; flex-wrap: wrap; flex-shrink: 0; }
+.ts-btn-call {
+  background: var(--red);
+  color: var(--white);
+  padding: 0.55rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.ts-btn-call:hover { background: var(--red-dark); }
+.ts-btn-form {
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  padding: 0.55rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.ts-btn-form:hover { background: rgba(255,255,255,0.2); }
+
+/* Mid-page CTA strip */
+.ts-mid-cta {
+  background: var(--red);
+  padding: 30px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.ts-mid-cta-text {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+}
+.ts-mid-cta-text strong { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: var(--white); display: block; }
+.ts-mid-cta-right { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; }
+.ts-mid-phone {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.ts-mid-phone:hover { opacity: 0.85; }
+
+/* Other Issue section */
+.ts-other-wrap {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+}
+.ts-other-toggle-btn {
+  width: 100%;
+  background: var(--white);
+  border: 2px dashed var(--blue);
+  border-radius: 4px;
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 1rem;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: inherit;
+}
+.ts-other-toggle-btn:hover { background: var(--off-white); border-color: var(--red); }
+.ts-other-toggle-left { display: flex; align-items: center; gap: 1rem; }
+.ts-other-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(26,58,107,0.07);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.ts-other-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+.ts-other-sublabel {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-top: 2px;
+}
+.ts-other-chevron {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--blue);
+  transition: transform 0.3s, background 0.2s;
+  flex-shrink: 0;
+}
+.ts-other-wrap.open .ts-other-chevron {
+  transform: rotate(180deg);
+  background: var(--blue);
+  color: white;
+}
+
+.ts-other-form-wrap {
+  display: none;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 2rem 2rem 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+.ts-other-wrap.open .ts-other-form-wrap { display: block; }
+.ts-other-wrap.open .ts-other-toggle-btn { border-radius: 4px 4px 0 0; border-bottom: none; border-style: solid; }
+
+.ts-form-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.3rem;
+}
+.ts-form-sub {
+  font-size: 0.875rem;
+  color: var(--gray);
+  margin-bottom: 1.6rem;
+  line-height: 1.6;
+}
+
+.ts-success {
+  display: none;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 1.2rem 1.5rem;
+  margin-top: 1rem;
+  color: #155724;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.ts-success strong { display: block; font-size: 1rem; margin-bottom: 0.3rem; }
+
+/* Disclaimer */
+.ts-disclaimer {
+  background: var(--white);
+  border-top: 1px solid var(--gray-light);
+  padding: 36px 8%;
+  text-align: center;
+}
+.ts-disclaimer-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.75;
+}
+.ts-disclaimer-inner strong { color: var(--text); }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .ts-detail-grid { grid-template-columns: 1fr; }
+  .ts-issue-cta { flex-direction: column; align-items: flex-start; }
+  .ts-mid-cta { flex-direction: column; }
+  .ts-tabs { padding: 0 4%; }
+  .ts-tab-btn { font-size: 0.85rem; padding: 1rem 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">Family Owned &amp; Operated Since 1995 &middot; Fully Licensed &amp; Insured &middot; NJ Lic. #13VH02546900</div>
+  <div class="top-bar-right">
+    <a href="mailto:info@sheridanheatingandcooling.com">&#9993; info@sheridanheatingandcooling.com</a>
+    <a href="tel:6092963151">&#128222; 609.296.3151</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    Sheridan Heating &amp; Cooling
+    <span class="logo-sub">Ocean County &middot; Jersey Shore</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="#">Services <span class="caret">&#9660;</span></a>
+      <ul class="dropdown">
+        <li><a href="heating.html">Heating</a></li>
+        <li><a href="cooling.html">Air Conditioning</a></li>
+        <li><a href="gas-conversions.html">Gas Conversions</a></li>
+        <li><a href="maintenance-agreements.html">Maintenance Plans</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="index.html#areas">Service Area</a></li>
+    <li><a href="troubleshooting.html" class="active">Troubleshooting</a></li>
+    <li><a href="contact.html" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Troubleshooting</span>
+    </nav>
+    <div class="page-hero-tag">&#128295; HVAC Help</div>
+    <h1 class="page-hero-title">AC or Heat <span class="red">Not Working?</span><br>Start Here.</h1>
+    <p class="page-hero-desc">Use this guide to quickly identify what might be happening with your heating or cooling system. We've outlined the most common problems, what usually causes them, and what you can do — so you can get answers fast and make informed decisions about next steps.</p>
+    <div class="page-hero-btns">
+      <a href="tel:6092963151" class="btn-red">Call 609.296.3151</a>
+      <a href="contact.html" class="btn-outline-white">Schedule Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="ts-intro">
+  <div class="ts-intro-inner">
+    <div class="section-tag">Troubleshooting Section</div>
+    <h2 class="ts-intro-title">AC or Heat Not Working?<br><span class="red">Start Here.</span></h2>
+    <p class="ts-intro-desc">
+      This tool is designed to help you identify the most likely cause of a common HVAC problem before calling for service. Select your issue below to see what's probably going on, what it means in plain language, and what steps you can take. When in doubt, our team is always just a phone call away.
+    </p>
+    <div class="ts-intro-cta">
+      <a href="tel:6092963151" class="btn-red">Call Us — 609.296.3151</a>
+      <a href="contact.html" class="btn-blue">Schedule a Service Call</a>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="ts-tabs-wrap">
+  <div class="ts-tabs">
+    <button class="ts-tab-btn active" data-tab="ac" aria-selected="true">
+      <span class="ts-tab-icon">&#10052;&#65039;</span> Air Conditioning (8 Issues)
+    </button>
+    <button class="ts-tab-btn" data-tab="heat" aria-selected="false">
+      <span class="ts-tab-icon">&#128293;</span> Heating (5 Issues)
+    </button>
+  </div>
+</div>
+
+<!-- PANELS -->
+<div class="ts-panels">
+
+  <!-- ══════════════════════════════════════════
+       AC PANEL
+  ══════════════════════════════════════════ -->
+  <div class="ts-panel active" id="panel-ac">
+    <div class="ts-panel-intro">
+      <h2>Air Conditioning Problems</h2>
+      <p>Select any issue below to see the most common cause, what it means, and what action to take. If you'd prefer to skip the troubleshooting and just schedule service, call us at <a href="tel:6092963151" style="color:var(--red);font-weight:600;">609.296.3151</a> — we're happy to help.</p>
+    </div>
+
+    <!-- HVAC Problem Block: AC Blowing Warm Air -->
+    <div class="ts-issue" id="ac-1">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Blowing Warm Air</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Air from your vents feels warm or room temperature instead of cool, even when the AC is running.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Low refrigerant (Freon) or a dirty, clogged air filter.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Refrigerant is the substance that absorbs heat from inside your home and releases it outside — it's what actually makes the air cold. When refrigerant is low, your system can't cool properly. A clogged air filter can also restrict airflow so severely that the system struggles to cool the air at all.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Check and replace your air filter first — this takes minutes and is free if you have a spare filter on hand. If warm air continues after that, the refrigerant level needs to be checked by a licensed technician. Refrigerant issues cannot be repaired without professional equipment and certification.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Ready to schedule service?</strong>
+            Our team will diagnose the issue and give you an upfront quote before any work begins.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: AC Not Turning On -->
+    <div class="ts-issue" id="ac-2">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Not Turning On</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">The system won't start at all when the thermostat calls for cooling — no fan, no airflow, nothing.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Tripped circuit breaker, thermostat setting issue, or a blown fuse at the unit.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Before assuming the worst, check the simple things first. A tripped breaker at your electrical panel is one of the most common reasons an AC won't start — and it takes 30 seconds to fix. It's also very common for the thermostat to be set to "Fan Only" or "Heat" by accident, especially after a season change.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Check your electrical panel for a tripped breaker labeled "AC" or "Air Handler" and reset it if needed. Make sure your thermostat is set to <em>Cool</em> mode with the target temperature set lower than the current room temperature. If the system still won't start after those checks, a technician needs to take a closer look.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Still not turning on?</strong>
+            We'll send a technician out to diagnose the problem quickly and get your AC back up and running.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: AC Running But Not Cooling House -->
+    <div class="ts-issue" id="ac-3">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Running But Not Cooling the House</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">The system runs continuously but the house stays warm — the temperature never reaches your thermostat setting.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Dirty outdoor condenser coils, refrigerant issue, or a system that's undersized for the home.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> The outdoor unit (condenser) releases the heat pulled from your home. If its coils are clogged with dirt, grass, or debris, heat gets trapped and the system can't cool efficiently. A refrigerant leak has a similar effect. On extremely hot days, a system that wasn't properly sized for your home may also struggle to keep up.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Walk outside and check the outdoor unit — make sure it's not surrounded by overgrown shrubs or debris, and that the fins aren't caked with dirt. Give it a few inches of clearance on all sides. If it looks clean and clear and the problem continues, a service call is the next step.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>House still not cooling?</strong>
+            Our technicians will find the root cause and have your system working the way it should.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: AC Turning On and Off Frequently -->
+    <div class="ts-issue" id="ac-4">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Turning On and Off Frequently</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">The AC starts up, runs for just a short time, shuts off — then repeats the cycle over and over. The house never fully cools down.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Oversized system, dirty air filter causing overheating, or low refrigerant.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> This is called "short cycling," and it's hard on your equipment. An oversized AC cools the space too quickly and shuts off before properly removing humidity — which can leave your home feeling clammy even when the temperature reads correctly. A clogged air filter can also cause the system to overheat and trigger a safety shutoff repeatedly.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Start by replacing the air filter and making sure all supply vents throughout the house are open and unobstructed. If the short cycling continues, have a technician inspect the system — persistent short cycling adds wear and can lead to premature equipment failure.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Short cycling is hard on your system.</strong>
+            The sooner it's diagnosed, the better. Give us a call and we'll get someone out to take a look.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: AC Making Loud Noises -->
+    <div class="ts-issue" id="ac-5">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Making Loud or Unusual Noises</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Banging, rattling, squealing, grinding, or clanking sounds coming from the indoor or outdoor unit.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Loose components, a failing fan motor, debris caught in the unit, or worn bearings.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Unusual sounds are almost always a mechanical warning sign. A banging or clanking sound often points to something loose or broken inside the unit. A squealing noise typically means a worn belt or failing motor bearing. A rattling sound could be debris caught in the fan. None of these get better on their own.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Turn the system off and call for service. Running a unit that's making loud noises can quickly turn a smaller repair into a much larger one — or cause total equipment failure. Don't wait on this one.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Unusual sounds mean something's wrong.</strong>
+            Call us right away — catching it early almost always means a less costly repair.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: AC Leaking Water -->
+    <div class="ts-issue" id="ac-6">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Leaking Water</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Water pooling around the indoor air handler, dripping from the unit, or staining on the ceiling or walls near the unit.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Clogged condensate drain line.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> As your AC cools the air, it also removes humidity — and that moisture has to go somewhere. It drains through a small condensate drain line that can clog over time with algae, dust, or debris. When it clogs, water backs up and overflows the drain pan. Left untreated, this can cause water damage to walls, ceilings, and flooring.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Locate the condensate drain line access point (usually a small PVC pipe near the air handler) and try pouring a cup of diluted white vinegar or bleach into it to clear a mild clog. If the leaking continues or is significant, turn off the system and call for service to prevent water damage.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Water damage can happen fast.</strong>
+            If the leak isn't clearing up, give us a call and we'll take care of it.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: AC Frozen Coil -->
+    <div class="ts-issue" id="ac-7">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">AC Frozen Coil (Ice on the Unit)</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Ice or frost forming on the indoor unit or the copper refrigerant lines. Airflow may be weak or the air may feel warm despite the AC running.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Restricted airflow from a dirty filter, or low refrigerant causing the coil to drop below freezing.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Your evaporator coil needs steady airflow to stay at the right temperature. When airflow is blocked (usually by a clogged filter), or refrigerant is too low, the coil gets cold enough to freeze the moisture in the air around it. A frozen coil can't cool your home, and if the system keeps running, it can damage the compressor — the most expensive part of the system.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Turn the system to <em>Fan Only</em> mode (not Off, not Cool) to allow the coil to thaw — this can take 2–4 hours. Replace the air filter while you wait. Once fully thawed, restart the system in cooling mode. If it freezes again within a day, the refrigerant level needs to be checked by a technician.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Repeated freezing can damage your compressor.</strong>
+            If it keeps happening, call us — we'll find the cause and fix it before it becomes a bigger problem.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: Weak Airflow from Vents -->
+    <div class="ts-issue" id="ac-8">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">Weak Airflow from Vents</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Very little air coming from the vents even when the system is running — rooms take a long time to heat or cool, or feel stuffy.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Dirty or clogged air filter, blocked vents, or a problem with the ductwork or blower fan.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Poor airflow is one of the most common HVAC complaints and is often caused by something simple — a clogged filter or a vent that was accidentally closed. Over time, poor airflow puts extra strain on your blower motor and can reduce the lifespan of the whole system. If the filter and vents check out, ductwork damage or a failing blower could be the culprit.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Replace the air filter and check every supply vent in the house — make sure none are closed or blocked by furniture. If airflow is still noticeably weak after those steps, the ductwork or blower fan may need to be inspected by a technician.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Poor airflow affects your whole system.</strong>
+            We can inspect the blower, ducts, and filter system and restore proper airflow to your home.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER ISSUE FORM (AC Panel) -->
+    <div class="ts-other-wrap" id="other-ac">
+      <button class="ts-other-toggle-btn" type="button" aria-expanded="false">
+        <div class="ts-other-toggle-left">
+          <div class="ts-other-icon">&#10067;</div>
+          <div>
+            <div class="ts-other-label">Don't See Your Issue Listed?</div>
+            <div class="ts-other-sublabel">Describe what's happening and our team will reach out to help.</div>
+          </div>
+        </div>
+        <div class="ts-other-chevron">&#9660;</div>
+      </button>
+      <div class="ts-other-form-wrap">
+        <div class="ts-form-title">Other HVAC Issue</div>
+        <p class="ts-form-sub">Fill out the form below and a member of our team will review your message and call you shortly to discuss and schedule service. There's no pressure and no obligation.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="otherFormAC">
+          <input type="hidden" name="_subject" value="Troubleshooting inquiry — Other AC Issue — sheridanheatingandcooling.com">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ac-fname">First Name *</label>
+              <input type="text" id="ac-fname" name="first_name" required placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label for="ac-lname">Last Name *</label>
+              <input type="text" id="ac-lname" name="last_name" required placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ac-email">Email Address *</label>
+              <input type="email" id="ac-email" name="email" required placeholder="jane@email.com">
+            </div>
+            <div class="form-group">
+              <label for="ac-phone">Phone Number *</label>
+              <input type="tel" id="ac-phone" name="phone" required placeholder="609.555.0100">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ac-issue">Describe Your Issue *</label>
+            <textarea id="ac-issue" name="issue_description" required placeholder="Tell us what's happening — when it started, what the system is doing, what you've already tried. The more detail, the better."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Message &rarr;</button>
+          <div class="ts-success" id="successAC">
+            <strong>&#10003; Message received — thank you!</strong>
+            Thank you for contacting Sheridan Heating and Cooling. Our team will review your message and call you shortly to schedule service. For urgent issues, you're always welcome to call us directly at <a href="tel:6092963151" style="color:#155724;font-weight:700;">609.296.3151</a>.
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /panel-ac -->
+
+
+  <!-- ══════════════════════════════════════════
+       HEATING PANEL
+  ══════════════════════════════════════════ -->
+  <div class="ts-panel" id="panel-heat">
+    <div class="ts-panel-intro">
+      <h2>Heating Problems</h2>
+      <p>Click any issue below to learn what's likely happening and what to do next. If you'd rather talk to someone directly, call us anytime at <a href="tel:6092963151" style="color:var(--red);font-weight:600;">609.296.3151</a>.</p>
+    </div>
+
+    <!-- HVAC Problem Block: Furnace Not Turning On -->
+    <div class="ts-issue" id="heat-1">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">Furnace Not Turning On</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">No heat at all — the furnace won't start when the thermostat calls for it. No sound, no fan, no warmth.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">No power to the furnace, thermostat setting issue, tripped breaker, or pilot light is out (older units).</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Most of the time when a furnace won't turn on, it's something simple. The power switch near the furnace (it looks like a standard light switch) may have been accidentally turned off. A tripped circuit breaker is another quick fix. And it's surprisingly common for the thermostat to be set to the wrong mode after a season change.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Check the furnace power switch (usually on the wall near the unit), check your electrical panel for a tripped breaker, and confirm the thermostat is set to <em>Heat</em> mode with the temperature set above the current room temperature. If your furnace has a standing pilot light, follow the manufacturer's directions to relight it. If none of these steps solve it, the ignition system or another component may need professional attention.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Still no heat?</strong>
+            Don't stay cold — call us and we'll get a technician out as quickly as possible.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: Heater Blowing Cold Air -->
+    <div class="ts-issue" id="heat-2">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">Heater Blowing Cold Air</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">The furnace or air handler is running and you can feel air from the vents — but it's cold or lukewarm instead of warm.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Overheated furnace (burners shut off by a safety switch), or an ignition failure where the burners aren't lighting.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> When a furnace overheats — often because a dirty filter is blocking airflow — a safety limit switch shuts off the burners to prevent damage, but the blower fan keeps running. This pushes unheated air through the vents. You feel air coming out, but it's cold. An ignition issue (where the burners simply fail to light) has the same result.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Replace the air filter and make sure all vents in the house are open. Turn the system off for 30 minutes to let it cool, then try again. If the problem continues, the limit switch, ignition system, or heat exchanger may need to be evaluated by a technician.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Cold air from the heater is a clear signal something's off.</strong>
+            We'll find the cause and get your heat working the way it should.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: Uneven Heating in House -->
+    <div class="ts-issue" id="heat-3">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">Uneven Heating in the House</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Some rooms are comfortable while others are noticeably colder, even with the heat running. Often affects rooms farther from the furnace or on upper floors.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Closed or blocked vents, duct imbalance, or inadequate duct distribution for the home's layout.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> Uneven heating is common, especially in older homes or homes with long duct runs. Heat rises naturally, so upper floors tend to stay warmer. Rooms at the far end of the duct system may receive less airflow. Closed vents in one room don't redirect heat to another — they actually pressure the system and reduce overall efficiency.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Make sure every supply vent in the house is open. Check that furniture, rugs, or curtains aren't blocking airflow. If certain rooms are consistently cold regardless, a technician can evaluate your duct system and recommend adjustments, duct balancing, or zoning solutions.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Tired of cold rooms?</strong>
+            We can evaluate your duct system and help distribute heat more evenly throughout your home.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: Furnace Cycling Frequently -->
+    <div class="ts-issue" id="heat-4">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">Furnace Cycling On and Off Frequently</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">The furnace turns on, runs for a short time, shuts off, then almost immediately starts up again — repeatedly, without the house warming up properly.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Overheating due to restricted airflow (dirty filter), or a failing limit switch that's tripping too early.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> A furnace that short cycles is working against itself — it can't build up enough heat before shutting off, and the constant starting and stopping is stressful on the equipment. The most common trigger is a clogged filter causing the furnace to overheat, which trips the high-limit safety switch and shuts things down. A worn limit switch can also cause this on its own, even if the furnace isn't actually overheating.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Replace the air filter — this alone resolves the issue in many cases. Make sure all vents are open and unblocked. If the cycling continues after those steps, have a technician inspect the limit switch and check for any other underlying cause.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Frequent cycling shortens equipment life.</strong>
+            Let us diagnose it before it turns into a bigger repair down the road.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HVAC Problem Block: Thermostat Not Responding -->
+    <div class="ts-issue" id="heat-5">
+      <div class="ts-issue-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="ts-issue-symptom">Thermostat Not Responding</div>
+        <div class="ts-issue-chevron">&#9660;</div>
+      </div>
+      <div class="ts-issue-body">
+        <div class="ts-detail-grid">
+          <div class="ts-detail">
+            <div class="ts-detail-label">What You Notice</div>
+            <div class="ts-detail-value">Adjusting the thermostat has no effect on the system. The display may be blank, dim, or behaving erratically. The heat or AC doesn't respond to changes.</div>
+          </div>
+          <div class="ts-detail cause">
+            <div class="ts-detail-label">Most Common Cause</div>
+            <div class="ts-detail-value">Dead batteries, a tripped circuit breaker, loose wiring behind the unit, or a faulty thermostat.</div>
+          </div>
+        </div>
+        <div class="ts-explanation">
+          <strong>What this means:</strong> The thermostat is the brain of your HVAC system — when it stops communicating, nothing works right. The good news is that it's often something simple. Dead batteries in a battery-powered thermostat will cause the display to go blank and the system to stop responding entirely. A setting that was accidentally changed (like switching from Heat to Cool) can have the same effect.
+        </div>
+        <div class="ts-action">
+          <div class="ts-action-label">Suggested Action</div>
+          Replace the thermostat batteries if it uses them (check the back of the unit). Make sure it's set to the correct mode — <em>Heat</em> or <em>Cool</em> — and that the fan is set to <em>Auto</em>, not <em>On</em>. If the display is blank and fresh batteries don't help, check the circuit breaker. If it still doesn't respond, a technician can test the wiring and replace the unit if needed.
+        </div>
+        <div class="ts-issue-cta">
+          <div class="ts-issue-cta-text">
+            <strong>Thermostat issues are usually quick fixes.</strong>
+            We can diagnose and replace it quickly to restore full control over your system.
+          </div>
+          <div class="ts-issue-cta-btns">
+            <a href="tel:6092963151" class="ts-btn-call">&#128222; Call 609.296.3151</a>
+            <a href="contact.html" class="ts-btn-form">Schedule Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER ISSUE FORM (Heat Panel) -->
+    <div class="ts-other-wrap" id="other-heat">
+      <button class="ts-other-toggle-btn" type="button" aria-expanded="false">
+        <div class="ts-other-toggle-left">
+          <div class="ts-other-icon">&#10067;</div>
+          <div>
+            <div class="ts-other-label">Don't See Your Issue Listed?</div>
+            <div class="ts-other-sublabel">Describe what's happening and our team will reach out to help.</div>
+          </div>
+        </div>
+        <div class="ts-other-chevron">&#9660;</div>
+      </button>
+      <div class="ts-other-form-wrap">
+        <div class="ts-form-title">Other HVAC Issue</div>
+        <p class="ts-form-sub">Fill out the form below and a member of our team will review your message and call you shortly to discuss and schedule service. There's no pressure and no obligation.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="otherFormHeat">
+          <input type="hidden" name="_subject" value="Troubleshooting inquiry — Other Heating Issue — sheridanheatingandcooling.com">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="heat-fname">First Name *</label>
+              <input type="text" id="heat-fname" name="first_name" required placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label for="heat-lname">Last Name *</label>
+              <input type="text" id="heat-lname" name="last_name" required placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="heat-email">Email Address *</label>
+              <input type="email" id="heat-email" name="email" required placeholder="jane@email.com">
+            </div>
+            <div class="form-group">
+              <label for="heat-phone">Phone Number *</label>
+              <input type="tel" id="heat-phone" name="phone" required placeholder="609.555.0100">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="heat-issue">Describe Your Issue *</label>
+            <textarea id="heat-issue" name="issue_description" required placeholder="Tell us what's happening — when it started, what the system is doing, what you've already tried. The more detail, the better."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Message &rarr;</button>
+          <div class="ts-success" id="successHeat">
+            <strong>&#10003; Message received — thank you!</strong>
+            Thank you for contacting Sheridan Heating and Cooling. Our team will review your message and call you shortly to schedule service. For urgent issues, you're always welcome to call us directly at <a href="tel:6092963151" style="color:#155724;font-weight:700;">609.296.3151</a>.
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /panel-heat -->
+
+</div><!-- /ts-panels -->
+
+<!-- MID-PAGE CALL TO ACTION -->
+<div class="ts-mid-cta">
+  <div class="ts-mid-cta-text">
+    <strong>Not sure what's wrong? Just call us.</strong>
+    Our team is friendly, honest, and happy to talk through what you're experiencing — even before you schedule a visit.
+  </div>
+  <div class="ts-mid-cta-right">
+    <a href="tel:6092963151" class="ts-mid-phone">609.296.3151</a>
+    <a href="contact.html" class="btn-white">Schedule Online</a>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="ts-disclaimer">
+  <div class="ts-disclaimer-inner">
+    <strong>Please note:</strong> The causes listed above represent the most common possibilities for each symptom — they are not a substitute for a professional inspection. Every HVAC system is different, and the only way to confirm the actual cause of a problem is for a licensed technician to evaluate the equipment in person. <strong>Final pricing is always determined after inspection</strong>, once the technician has identified the specific issue and parts needed. Our goal here is to give you helpful information so you can make confident, informed decisions.
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div>
+    <h2 class="cta-title">Ready to Schedule Service?</h2>
+    <p class="cta-sub">Call or use the form — we respond fast and always provide upfront, honest pricing with no obligation.</p>
+  </div>
+  <div class="cta-right">
+    <a href="tel:6092963151" class="cta-phone-big">609.296.3151</a>
+    <a href="contact.html" class="btn-white">Request a Service Call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="footer-logo">Sheridan <span>H&amp;C</span></a>
+      <p class="footer-desc">Family owned and operated since 1995. Serving Ocean County, the Jersey Shore, and Long Beach Island with licensed, reliable HVAC service you can count on.</p>
+      <span class="footer-lic">NJ Lic. #13VH02546900 &middot; Trane Comfort Specialist</span>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="heating.html">Heating</a></li>
+        <li><a href="cooling.html">Air Conditioning</a></li>
+        <li><a href="gas-conversions.html">Gas Conversions</a></li>
+        <li><a href="maintenance-agreements.html">Maintenance Plans</a></li>
+        <li><a href="contact.html">New Construction</a></li>
+        <li><a href="contact.html">Emergency Repairs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#reviews">Customer Reviews</a></li>
+        <li><a href="index.html#areas">Service Area</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-line">140 7th Ave, Unit 18<br>Little Egg Harbor, NJ 08087</div>
+      <div class="contact-line"><a href="tel:6092963151">609.296.3151</a></div>
+      <div class="contact-line"><a href="mailto:info@sheridanheatingandcooling.com">info@sheridanheatingandcooling.com</a></div>
+      <div class="contact-line" style="margin-top:0.5rem;font-size:0.78rem;opacity:0.5;">Mon&ndash;Fri 8:00am&ndash;4:30pm<br>Sat 9:00am&ndash;1:00pm &middot; Sun Closed</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sheridan Heating &amp; Cooling LLC &middot; All Rights Reserved</p>
+    <p>sheridanheatingandcooling.com</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ── Tab switching ── */
+  var tabBtns = document.querySelectorAll('.ts-tab-btn');
+  var panels = document.querySelectorAll('.ts-panel');
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = this.dataset.tab;
+      tabBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      document.getElementById('panel-' + target).classList.add('active');
+    });
+  });
+
+  /* ── Issue accordion ── */
+  document.querySelectorAll('.ts-issue-header').forEach(function (header) {
+    header.addEventListener('click', function () {
+      var issue = this.parentElement;
+      var isOpen = issue.classList.contains('open');
+      /* Close all others in same panel */
+      var panel = issue.closest('.ts-panel');
+      panel.querySelectorAll('.ts-issue.open').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.ts-issue-header').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        issue.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+        /* Smooth scroll so header stays visible */
+        setTimeout(function () {
+          header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+      }
+    });
+    /* Keyboard support */
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+    });
+  });
+
+  /* ── Other issue form toggle ── */
+  document.querySelectorAll('.ts-other-toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var wrap = this.parentElement;
+      wrap.classList.toggle('open');
+      this.setAttribute('aria-expanded', wrap.classList.contains('open') ? 'true' : 'false');
+    });
+  });
+
+  /* ── Form submissions ── */
+  function handleForm(formId, successId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      if (form.action.includes('YOUR_FORM_ID')) {
+        e.preventDefault();
+        var success = document.getElementById(successId);
+        success.style.display = 'block';
+        form.reset();
+        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+  handleForm('otherFormAC', 'successAC');
+  handleForm('otherFormHeat', 'successHeat');
+
+})();
+</script>
+</body>
+</html>
