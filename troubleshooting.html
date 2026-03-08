@@ -40,51 +40,64 @@
   line-height: 1.75;
   margin-bottom: 1.8rem;
 }
-.ts-intro-cta {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
 
-/* Category tabs */
-.ts-tabs-wrap {
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-light);
-  position: sticky;
-  top: 72px;
-  z-index: 500;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.ts-tabs {
+/* Category selector cards */
+.ts-category-select {
   display: flex;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 8%;
-  gap: 0;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 .ts-tab-btn {
   flex: 1;
-  padding: 1.1rem 1.5rem;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--gray);
-  background: none;
-  border: none;
-  border-bottom: 3px solid transparent;
+  min-width: 200px;
+  max-width: 260px;
+  padding: 1.4rem 1.6rem;
+  background: var(--white);
+  border: 2px solid var(--gray-light);
+  border-radius: 6px;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
+  text-align: center;
 }
-.ts-tab-btn:hover { color: var(--blue); }
-.ts-tab-btn.active { color: var(--blue); border-bottom-color: var(--red); }
-.ts-tab-icon { font-size: 1.2rem; }
+.ts-tab-btn:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 16px rgba(26,58,107,0.12);
+}
+.ts-tab-btn.active {
+  border-color: var(--red);
+  background: var(--blue);
+  box-shadow: 0 4px 20px rgba(26,58,107,0.2);
+}
+.ts-tab-icon { font-size: 2rem; }
+.ts-cat-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--blue);
+  letter-spacing: 0.5px;
+}
+.ts-tab-btn.active .ts-cat-name { color: var(--white); }
+.ts-cat-count {
+  font-size: 0.78rem;
+  color: var(--gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.ts-tab-btn.active .ts-cat-count { color: rgba(255,255,255,0.65); }
+.ts-intro-note {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+.ts-intro-note a { color: var(--red); font-weight: 700; }
 
 /* Panels */
 .ts-panels { padding: 56px 8%; background: var(--off-white); }
@@ -496,30 +509,27 @@
   </div>
 </section>
 
-<!-- INTRO -->
+<!-- INTRO + CATEGORY SELECT -->
 <div class="ts-intro">
   <div class="ts-intro-inner">
-    <div class="section-tag">Troubleshooting Section</div>
-    <h2 class="ts-intro-title">AC or Heat Not Working?<br><span class="red">Start Here.</span></h2>
+    <div class="section-tag">Select Your Issue</div>
+    <h2 class="ts-intro-title">What's happening with<br>your <span class="red">HVAC system?</span></h2>
     <p class="ts-intro-desc">
-      This tool is designed to help you identify the most likely cause of a common HVAC problem before calling for service. Select your issue below to see what's probably going on, what it means in plain language, and what steps you can take. When in doubt, our team is always just a phone call away.
+      Choose a category below to see the most common issues, what causes them, and what to do next. Each entry is written in plain language — no technical background needed.
     </p>
-    <div class="ts-intro-cta">
-      <a href="tel:6092963151" class="btn-red">Call Us — 609.296.3151</a>
-      <a href="contact.html" class="btn-blue">Schedule a Service Call</a>
+    <div class="ts-category-select">
+      <button class="ts-tab-btn active" data-tab="ac" aria-selected="true">
+        <span class="ts-tab-icon">&#10052;&#65039;</span>
+        <span class="ts-cat-name">Air Conditioning</span>
+        <span class="ts-cat-count">8 Common Issues</span>
+      </button>
+      <button class="ts-tab-btn" data-tab="heat" aria-selected="false">
+        <span class="ts-tab-icon">&#128293;</span>
+        <span class="ts-cat-name">Heating</span>
+        <span class="ts-cat-count">5 Common Issues</span>
+      </button>
     </div>
-  </div>
-</div>
-
-<!-- CATEGORY TABS -->
-<div class="ts-tabs-wrap">
-  <div class="ts-tabs">
-    <button class="ts-tab-btn active" data-tab="ac" aria-selected="true">
-      <span class="ts-tab-icon">&#10052;&#65039;</span> Air Conditioning (8 Issues)
-    </button>
-    <button class="ts-tab-btn" data-tab="heat" aria-selected="false">
-      <span class="ts-tab-icon">&#128293;</span> Heating (5 Issues)
-    </button>
+    <p class="ts-intro-note">Prefer to talk to someone? Call us at <a href="tel:6092963151">609.296.3151</a> — we're happy to help.</p>
   </div>
 </div>
 
