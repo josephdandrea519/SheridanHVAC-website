@@ -13,19 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .success-message {
-    display: none;
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
-    border-radius: 4px;
-    padding: 1rem 1.2rem;
-    margin-top: 1rem;
-    color: #155724;
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-</style>
 </head>
 <body>
 
@@ -90,7 +77,7 @@
     <div class="contact-form-wrap">
       <div class="form-title">Send Us a Message</div>
       <p class="form-sub">Fill out the form below and we'll get back to you quickly — usually the same day during business hours.</p>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+      <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
         <input type="hidden" name="form-name" value="contact">
         <!-- Honeypot spam protection — hidden from real users -->
         <p style="display:none;">
@@ -141,9 +128,6 @@
           <textarea id="message" name="message" placeholder="Describe your situation — age of equipment, symptoms you're seeing, timeline, etc. The more detail you share, the better we can help."></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message &rarr;</button>
-        <div class="success-message" id="successMsg">
-          &#10003; Thanks! We received your message and will be in touch shortly. For urgent needs, please call us directly at 609.296.3151.
-        </div>
       </form>
     </div>
 
@@ -291,35 +275,5 @@
 </footer>
 
 <script src="main.js"></script>
-<script>
-/* Netlify Forms — AJAX submission */
-var form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var successMsg = document.getElementById('successMsg');
-    var submitBtn = form.querySelector('.form-submit');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending\u2026';
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    })
-    .then(function() {
-      successMsg.style.display = 'block';
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message \u2192';
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    })
-    .catch(function() {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message \u2192';
-      alert('Something went wrong. Please call us at 609.296.3151 or email info@sheridanheatingandcooling.com directly.');
-    });
-  });
-}
-</script>
 </body>
 </html>
