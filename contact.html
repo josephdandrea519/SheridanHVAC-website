@@ -90,14 +90,12 @@
     <div class="contact-form-wrap">
       <div class="form-title">Send Us a Message</div>
       <p class="form-sub">Fill out the form below and we'll get back to you quickly — usually the same day during business hours.</p>
-      <!--
-        To activate this form:
-        1. Sign up at formspree.io (free tier available)
-        2. Create a new form and copy your form ID
-        3. Replace "YOUR_FORM_ID" below with your actual form ID
-      -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
-        <input type="hidden" name="_subject" value="New service request from sheridanheatingandcooling.com">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+        <input type="hidden" name="form-name" value="contact">
+        <!-- Honeypot spam protection — hidden from real users -->
+        <p style="display:none;">
+          <label>Don't fill this out: <input name="bot-field"></label>
+        </p>
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name *</label>
@@ -294,16 +292,32 @@
 
 <script src="main.js"></script>
 <script>
-/* Simple Formspree success handler */
+/* Netlify Forms — AJAX submission */
 var form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', function(e) {
-    /* If Formspree isn't set up yet, show the message anyway for demo purposes */
-    if (form.action.includes('YOUR_FORM_ID')) {
-      e.preventDefault();
-      document.getElementById('successMsg').style.display = 'block';
+    e.preventDefault();
+    var successMsg = document.getElementById('successMsg');
+    var submitBtn = form.querySelector('.form-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending\u2026';
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(function() {
+      successMsg.style.display = 'block';
       form.reset();
-    }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message \u2192';
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    })
+    .catch(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message \u2192';
+      alert('Something went wrong. Please call us at 609.296.3151 or email info@sheridanheatingandcooling.com directly.');
+    });
   });
 }
 </script>
