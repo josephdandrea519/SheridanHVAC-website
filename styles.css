@@ -377,6 +377,7 @@ details[open] .faq-toggle { background: var(--blue); color: white; transform: ro
 .about-photo-sub { font-size: 0.85rem; color: rgba(255,255,255,0.65); }
 .cert-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
 .cert-badge { background: rgba(26,58,107,0.08); border: 1.5px solid rgba(26,58,107,0.2); color: var(--blue); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.4rem 0.9rem; border-radius: 3px; }
+.history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .timeline { display: flex; flex-direction: column; gap: 0; }
 .timeline-item { display: flex; gap: 1.5rem; padding-bottom: 2rem; position: relative; }
 .timeline-item::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--gray-light); }
@@ -456,6 +457,7 @@ footer { background: var(--blue); padding: 60px 8% 24px; }
   .cta-right { align-items: flex-start; }
   .feature-grid { grid-template-columns: 1fr; }
   .about-story { grid-template-columns: 1fr; }
+  .history-grid { grid-template-columns: 1fr; gap: 2rem; }
   .contact-layout { grid-template-columns: 1fr; }
   .stat-strip { grid-template-columns: repeat(2, 1fr); }
 }
