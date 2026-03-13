@@ -457,7 +457,8 @@ footer { background: var(--blue); padding: 60px 8% 24px; }
   .cta-right { align-items: flex-start; }
   .feature-grid { grid-template-columns: 1fr; }
   .about-story { grid-template-columns: 1fr; }
-  .history-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .history-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .history-grid .btn-red { display: block; text-align: center; }
   .contact-layout { grid-template-columns: 1fr; }
   .stat-strip { grid-template-columns: repeat(2, 1fr); }
 }
@@ -471,4 +472,11 @@ footer { background: var(--blue); padding: 60px 8% 24px; }
   .plans-grid { grid-template-columns: 1fr; }
   .top-bar { justify-content: center; text-align: center; }
   .top-bar-left { display: none; }
+  /* Timeline: compact dot + recalculate vertical line anchor */
+  .timeline-dot { width: 36px; height: 36px; font-size: 0.63rem; }
+  .timeline-item { gap: 0.875rem; padding-bottom: 1.5rem; }
+  .timeline-item::before { left: 17px; top: 36px; }
+  /* History section: tighter vertical padding on phones */
+  .history-grid { gap: 2rem; }
+  .history-section { padding-top: 56px; padding-bottom: 56px; }
 }
