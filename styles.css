@@ -44,6 +44,16 @@ nav {
   position: sticky; top: 0; z-index: 1000;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
+/* breadcrumb is a <nav> — reset all inherited nav-bar styles */
+nav.breadcrumb {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: auto;
+  position: static;
+  z-index: auto;
+  box-shadow: none;
+}
 .nav-logo { display: inline-flex; align-items: center; flex-shrink: 0; }
 .nav-logo img { height: 90px; width: auto; display: block; }
 .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
