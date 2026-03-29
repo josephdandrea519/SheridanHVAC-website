@@ -85,6 +85,26 @@ nav {
 }
 .nav-cta:hover { background: var(--red-dark) !important; }
 
+/* Nav Book Online (HCP) */
+.nav-book {
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  height: auto;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-book:hover { background: var(--blue-mid) !important; }
+
 /* Hamburger */
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px;

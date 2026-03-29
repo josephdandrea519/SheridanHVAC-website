@@ -12,6 +12,43 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  .hcp-button {
+    display: block;
+    width: 100%;
+    padding: 0.95rem 2rem;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .hcp-button:hover { background: #96281b; }
+  .booking-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    color: #6c757d;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .booking-divider::before,
+  .booking-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e9ecef;
+  }
+</style>
 </head>
 <body>
 
@@ -59,7 +96,7 @@
     </nav>
     <div class="page-hero-tag">&#128222; Get in Touch</div>
     <h1 class="page-hero-title">Contact <span class="red">Sheridan</span><br>Heating &amp; Cooling</h1>
-    <p class="page-hero-desc">Ready to schedule service, get a free estimate, or just ask a question? We respond fast — call, email, or use the form below. There's no obligation and no high-pressure sales.</p>
+    <p class="page-hero-desc">Ready to schedule service, get a free estimate, or just ask a question? We respond fast &mdash; call, email, or use the form below. There's no obligation and no high-pressure sales.</p>
     <div class="page-hero-btns">
       <a href="tel:6092963151" class="btn-red">Call 609.296.3151</a>
       <a href="mailto:info@sheridanheatingandcooling.com" class="btn-outline-white">Email Us</a>
@@ -73,11 +110,19 @@
 
     <!-- FORM -->
     <div class="contact-form-wrap">
+      <div class="form-title">Book an Appointment Online</div>
+      <p class="form-sub">Select your service and pick a time that works for you &mdash; straight into our schedule, no phone tag required.</p>
+      <!--Start of Housecallpro Online booking button-->
+      <button data-token="6378e076b99441e7b94f69a7d30761b2" data-orgname="Sheridan-Heating-and-Cooling-LLC" class="hcp-button" onClick="HCPWidget.openModal()">Book Online</button>
+      <!--End of Housecallpro Online booking button-->
+
+      <div class="booking-divider">or send us a message</div>
+
       <div class="form-title">Send Us a Message</div>
-      <p class="form-sub">Fill out the form below and we'll get back to you quickly — usually the same day during business hours.</p>
+      <p class="form-sub">Fill out the form below and we'll get back to you quickly &mdash; usually the same day during business hours.</p>
       <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
         <input type="hidden" name="form-name" value="contact">
-        <!-- Honeypot spam protection — hidden from real users -->
+        <!-- Honeypot spam protection &mdash; hidden from real users -->
         <p style="display:none;">
           <label>Don't fill this out: <input name="bot-field"></label>
         </p>
@@ -123,7 +168,7 @@
         </div>
         <div class="form-group">
           <label for="message">Tell Us More</label>
-          <textarea id="message" name="message" placeholder="Describe your situation — age of equipment, symptoms you're seeing, timeline, etc. The more detail you share, the better we can help."></textarea>
+          <textarea id="message" name="message" placeholder="Describe your situation &mdash; age of equipment, symptoms you're seeing, timeline, etc. The more detail you share, the better we can help."></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message &rarr;</button>
       </form>
@@ -134,7 +179,7 @@
       <div>
         <div class="section-tag">Reach Us Directly</div>
         <h2 class="section-title" style="font-size:1.8rem;">We're Easy to Reach</h2>
-        <p class="section-sub" style="margin-bottom:1.5rem;">Prefer to call? Email? Either works — we respond as fast as we can.</p>
+        <p class="section-sub" style="margin-bottom:1.5rem;">Prefer to call? Email? Either works &mdash; we respond as fast as we can.</p>
       </div>
       <div class="contact-info-item">
         <div class="contact-info-icon">&#128222;</div>
@@ -172,7 +217,7 @@
       <div class="map-wrap">
         <iframe
           src="https://maps.google.com/maps?q=Little+Egg+Harbor+Township,+NJ&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          title="Sheridan Heating &amp; Cooling — Little Egg Harbor, NJ"
+          title="Sheridan Heating &amp; Cooling &mdash; Little Egg Harbor, NJ"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -191,7 +236,7 @@
   <div class="process-steps" style="max-width:900px;margin:0 auto;">
     <div class="process-step">
       <div class="process-step-title">You Reach Out</div>
-      <p class="process-step-text">Call, email, or use the form above. We respond quickly — usually the same day during business hours.</p>
+      <p class="process-step-text">Call, email, or use the form above. We respond quickly &mdash; usually the same day during business hours.</p>
     </div>
     <div class="process-step">
       <div class="process-step-title">We Listen</div>
@@ -212,7 +257,7 @@
 <section class="area-section">
   <div class="section-tag">Where We Work</div>
   <h2 class="section-title">Serving Ocean County &amp; the Jersey Shore</h2>
-  <p class="section-sub">Based in Little Egg Harbor, we cover Southern Ocean County and the surrounding areas. Not sure if we come to you? Just call — we'll tell you straight.</p>
+  <p class="section-sub">Based in Little Egg Harbor, we cover Southern Ocean County and the surrounding areas. Not sure if we come to you? Just call &mdash; we'll tell you straight.</p>
   <div class="area-tags">
     <span class="area-tag">Little Egg Harbor</span><span class="area-tag">Long Beach Island</span><span class="area-tag">Tuckerton</span><span class="area-tag">Manahawkin</span><span class="area-tag">Beach Haven</span><span class="area-tag">Brant Beach</span><span class="area-tag">Parkertown</span><span class="area-tag">West Creek</span><span class="area-tag">New Gretna</span><span class="area-tag">Cedar Run</span><span class="area-tag">Mayetta</span><span class="area-tag">Beach Haven Terrace</span><span class="area-tag">Beach Haven West</span><span class="area-tag">Staffordville</span><span class="area-tag">Toms River</span><span class="area-tag">Barnegat</span><span class="area-tag">All of Southern NJ</span>
   </div>
@@ -275,5 +320,8 @@
 </footer>
 
 <script src="main.js"></script>
+<!--Start of Housecallpro Online booking script-->
+<script async src="https://online-booking.housecallpro.com/script.js?token=6378e076b99441e7b94f69a7d30761b2&orgName=Sheridan-Heating-and-Cooling-LLC"></script>
+<!--End of Housecallpro Online booking script-->
 </body>
 </html>
