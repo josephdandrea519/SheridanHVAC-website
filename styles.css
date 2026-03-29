@@ -87,6 +87,8 @@ nav {
 
 /* Nav Book Online (HCP) */
 .nav-book {
+  display: inline-flex;
+  align-items: center;
   background: var(--blue) !important;
   color: var(--white) !important;
   border: none;
@@ -102,8 +104,9 @@ nav {
   cursor: pointer;
   transition: background 0.2s;
   white-space: nowrap;
+  text-decoration: none;
 }
-.nav-book:hover { background: var(--blue-mid) !important; }
+.nav-book:hover { background: var(--blue-mid) !important; color: var(--white) !important; }
 
 /* Hamburger */
 .nav-toggle {
@@ -467,6 +470,7 @@ footer { background: var(--blue); padding: 60px 8% 24px; }
   .has-dropdown:hover .dropdown { display: none; }
   .has-dropdown.dd-open .dropdown { display: block; position: static; box-shadow: none; border-top: none; border-left: 3px solid var(--red); margin-left: 1.5rem; min-width: auto; }
   .nav-cta { margin: 0.8rem 5% !important; border-radius: 3px; text-align: center; height: auto !important; display: block; }
+  .nav-book { margin: 0.4rem 5% 0.8rem !important; border-radius: 3px; text-align: center; height: auto !important; display: block; }
   /* Layout */
   .hero { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: row; flex-wrap: wrap; }
