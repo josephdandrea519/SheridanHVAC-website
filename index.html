@@ -181,23 +181,29 @@
     ctx.fillStyle = '#3C3B6E';
     ctx.fillRect(0, 0, cW, cH);
 
-    // 50-star field: 9 rows alternating 6 and 5 stars (US flag standard)
-    // Rows 1,3,5,7,9 = 6 stars; rows 2,4,6,8 = 5 stars (offset/staggered)
-    const starSize = Math.max(3, Math.min(cH / 11, 7));
+    // 50-star field — correct US flag geometry:
+    // 9 rows alternating 6 and 5 stars, staggered by half a column
+    // Horizontal: 6-star rows set the column spacing; 5-star rows offset by half
+    // Vertical: equal spacing with 10% top/bottom padding
+    const starSize = Math.max(3, Math.min(cH / 10.5, 7));
     ctx.font = 'bold ' + starSize + 'px serif';
     ctx.fillStyle = '#FFFFFF';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    const rows = 9;
-    const rowH = cH / (rows + 1);
-    for (let r = 0; r < rows; r++) {
-      const isWideRow = (r % 2 === 0); // rows 0,2,4,6,8 → 6 stars
-      const cols = isWideRow ? 6 : 5;
-      const colW = cW / (isWideRow ? 7 : 6);
-      const y = rowH * (r + 1);
-      for (let c = 0; c < cols; c++) {
-        const x = colW * (c + 1);
+    const numRows   = 9;
+    const starRows  = [6,5,6,5,6,5,6,5,6];
+    const vPad      = cH * 0.10;
+    const rowSpacing = (cH - 2 * vPad) / (numRows - 1);
+    const hPad      = cW * 0.08;
+    const colSpacing = (cW - 2 * hPad) / 5; // gap between 6-star positions
+
+    for (let r = 0; r < numRows; r++) {
+      const count  = starRows[r];
+      const offset = count === 6 ? 0 : colSpacing / 2; // stagger 5-star rows
+      const y      = vPad + r * rowSpacing;
+      for (let c = 0; c < count; c++) {
+        const x = hPad + offset + c * colSpacing;
         ctx.fillText('★', x, y);
       }
     }
